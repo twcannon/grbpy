@@ -12,7 +12,7 @@ setup(
     author='Thomas Cannon',
     author_email='cannontw@g.cofc.edu',
     packages=['grbpy'],
-    install_requires=['numpy'],
+    install_requires=['numpy>=1.17.0rc2'],
     version='0.1',
     license='MIT',
     description='An example of a python package from pre-existing code',

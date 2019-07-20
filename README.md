@@ -1,1 +1,13 @@
-pip install git+https://github.com/jladan/package_demo.git#egg=measurements
+# grbpy
+
+##Installation
+
+###for production use:
+
+`pip install git+https://github.com/gamma-ray-burst/grbpy.git#egg=measurements`
+
+###for development:
+
+`git clone https://github.com/gamma-ray-burst/grbpy.git`
+`cd grbpy`
+`python setup.py develop`
