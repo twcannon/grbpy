@@ -1,6 +1,6 @@
 # grbpy
 
-## Everything is highly developmental right now. Little if anything Zwill be working
+## Everything is highly developmental right now. Little if anything will be working
 
 ## Installation
 
@@ -10,6 +10,6 @@
 
 ### Development:
 
-`git clone https://github.com/gamma-ray-burst/grbpy.git`
-`cd grbpy`
-`python setup.py develop`
+`git clone https://github.com/gamma-ray-burst/grbpy.git`  
+`cd grbpy`  
+`python setup.py develop`  
