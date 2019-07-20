@@ -1,12 +1,14 @@
 # grbpy
 
-##Installation
+## Everything is highly developmental right now. Little if anything Zwill be working
 
-###for production use:
+## Installation
+
+## Production Use:
 
 `pip install git+https://github.com/gamma-ray-burst/grbpy.git#egg=measurements`
 
-###for development:
+### Development:
 
 `git clone https://github.com/gamma-ray-burst/grbpy.git`
 `cd grbpy`
