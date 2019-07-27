@@ -4,11 +4,11 @@
 
 ## Installation
 
-## Production Use:
+#### Production Use:
 
 `pip install git+https://github.com/gamma-ray-burst/grbpy.git#egg=measurements`
 
-### Development:
+#### Development:
 
 `git clone https://github.com/gamma-ray-burst/grbpy.git`  
 `cd grbpy`  
