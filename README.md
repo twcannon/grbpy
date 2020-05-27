@@ -6,7 +6,7 @@
 
 #### Production Use:
 
-`pip install git+https://github.com/gamma-ray-burst/grbpy.git#egg=measurements`
+`pip install git+https://github.com/twcannon/grbpy.git#egg=measurements`
 
 #### Development:
 
