@@ -16,6 +16,7 @@ class Burst:
         self.header_names = f.readline()
         self.header_data = f.readline()
         self.raw_data = f.read()
+        self.burst_data = np.genfromtxt(self.file_path, delimiter='  ',skip_header=2)
 
 
 
