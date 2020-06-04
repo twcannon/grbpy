@@ -6,7 +6,10 @@
 
 #### Production Use:
 
+initial install
 `pip install git+https://github.com/twcannon/grbpy.git#egg=measurements`
+update to latest version
+`pip install --upgrade git+https://github.com/twcannon/grbpy.git#egg=measurements`
 
 #### Development:
 
