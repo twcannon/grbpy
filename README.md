@@ -1,17 +1,19 @@
 # grbpy
 
-## Everything is highly developmental right now. Little if anything will be working
+## A package containing utilities for raw GRB file manipulation
+
+#### Everything is highly developmental right now. Little if anything will be working
 
 ## Installation
 
-#### Production Use:
+### Production Use:
 
-initial install
+##### Initial install
 `pip install git+https://github.com/twcannon/grbpy.git#egg=measurements`
-update to latest version
+##### Update to latest version
 `pip install --upgrade git+https://github.com/twcannon/grbpy.git#egg=measurements`
 
-#### Development:
+### Development Use:
 
 `git clone https://github.com/gamma-ray-burst/grbpy.git`  
 `cd grbpy`  

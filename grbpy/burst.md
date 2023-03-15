@@ -1,6 +1,19 @@
-# grbpy
+# Burst Data Documentation
 
-## BATSE
+## Experiments
+
+---
+
+### BATSE
+
+#### 64ms Data
+
+##### Location
+
+Raw Data: https://heasarc.gsfc.nasa.gov/FTP/compton/data/batse/ascii_data/64ms/  
+Single Download: https://gammaray.nsstc.nasa.gov/batse/grb/lightcurve/
+
+##### File Format
 
 trig# npts nlasc 1preb followed by 4-chan count rates (64-ms bins)
 
@@ -24,3 +37,5 @@ The counts in each 1.024-s DISCLA sample were divided equally into 16 64-ms samp
 In the earlier part of the mission when only ~4 minutes of DISCSC data was available, additional DISCLA data was concatenated after the end of DISCSC data to attempt to cover the whole burst and provide some background interval, pre and post burst. In any case, the maximum number of 64-ms samples concatenated is 8187 (524 s), save for nine exceptions for very long bursts (triggers 148, 2287, 3448, 3567, 3639, 3930, 5446, 5693, 6125) which can use up to 16379 samples.  
 
 Infrequently, gaps occur in some portion of the data stream; gaps are filled with zeroes in all four channels.
+
+---
