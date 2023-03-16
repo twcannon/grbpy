@@ -20,7 +20,7 @@ class BATSEBurst:
 
     def parse_file(self):
         f = open(self.file_path, 'r')
-        if self.time_signature == 'BATSE64ms':
+        if self.time_signature == '64ms':
             self.header_names = f.readline()
             self.header_data = f.readline()
             self.raw_data = f.read()
@@ -28,7 +28,7 @@ class BATSEBurst:
             self.sum_chan_data = self.ind_chan_data.sum(axis=1)
 
     def summary(self, raw=False):
-        if self.time_signature == 'BATSE64ms':
+        if self.time_signature == '64ms':
             print(f'Header: \n{self.header_names}{self.header_data}')
             if raw:
                 print(f'Raw Header: \n{self.header_names}{self.header_data}')
