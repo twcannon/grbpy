@@ -8,14 +8,14 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='grbpy',
-    url='https://github.com/gamma-ray-burst/grbpy',
+    url='https://github.com/twcannon/grbpy',
     author='Thomas Cannon',
-    author_email='cannontw@g.cofc.edu',
+    author_email='tcannon.mail@gmail.com',
     packages=['grbpy'],
     install_requires=['numpy>=1.17.0rc2'],
     version='0.1',
     license='MIT',
-    description='An example of a python package from pre-existing code',
+    description='A utility for GRB research',
     long_description=long_description,
     long_description_content_type='text/markdown',
 )
