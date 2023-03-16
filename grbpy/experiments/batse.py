@@ -5,12 +5,12 @@ import numpy as np
 
 class BATSEBurst:
 
-    def __init__(self, file_path, experiment):
-        accepted_experiments = ['BATSE64ms']
-        if experiment in accepted_experiments:
-            self.experiment = experiment
+    def __init__(self, file_path, time_signature):
+        accepted_time_signatures = ['64ms', 'tte', 'cont']
+        if time_signature in accepted_time_signatures:
+            self.time_signature = time_signature
         else:
-            sys.exit(f'file_type must be one of: {accepted_experiments}')
+            sys.exit(f'file_type must be one of: {accepted_time_signatures}')
         self.file_path = file_path
         self.header_names = None
         self.header_data = None
@@ -20,7 +20,7 @@ class BATSEBurst:
 
     def parse_file(self):
         f = open(self.file_path, 'r')
-        if self.experiment == 'BATSE64ms':
+        if self.time_signature == 'BATSE64ms':
             self.header_names = f.readline()
             self.header_data = f.readline()
             self.raw_data = f.read()
@@ -28,7 +28,7 @@ class BATSEBurst:
             self.sum_chan_data = self.ind_chan_data.sum(axis=1)
 
     def summary(self, raw=False):
-        if self.experiment == 'BATSE64ms':
+        if self.time_signature == 'BATSE64ms':
             print(f'Header: \n{self.header_names}{self.header_data}')
             if raw:
                 print(f'Raw Header: \n{self.header_names}{self.header_data}')
