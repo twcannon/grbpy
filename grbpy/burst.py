@@ -6,11 +6,11 @@ import numpy as np
 class Burst:
 
     def __init__(self, file_path, experiment):
-        accepted_experiment = ['BATSE64ms']
-        if file_type in accepted_experiment:
-            self.file_type = experiment
+        accepted_experiments = ['BATSE64ms']
+        if experiment in accepted_experiments:
+            self.experiment = experiment
         else:
-            sys.exit(f'file_type must be one of: {accepted_experiment}')
+            sys.exit(f'file_type must be one of: {accepted_experiments}')
         self.file_path = file_path
         self.header_names = None
         self.header_data = None
