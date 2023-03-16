@@ -1,4 +1,4 @@
-from grbpy.experiments.batse import BATSEBurst, BATSEDurations
+from grbpy.batse import BATSEBurst, BATSEDurations
 
 burst_file_path = 'sample_data/cat64ms.00143'
 test_burst = BATSEBurst(file_path=burst_file_path, time_signature='64ms')
