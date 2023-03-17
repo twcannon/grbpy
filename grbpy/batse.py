@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 
 
-
 class BATSEBurst:
 
     def __init__(self, file_path, time_signature):
@@ -32,7 +31,7 @@ class BATSEBurst:
             header_names = ['chan1', 'chan2', 'chan3', 'chan4']
             self.chan_data = pd.read_csv(self.file_path, header=1, delimiter=r"\s+", names=header_names)
             self.chan_data['sum_chan'] = self.chan_data[list(self.chan_data.columns)].sum(axis=1)
-            self.chan_data['trig_time'] = (np.arange(meta_dict['npts']) - meta_dict['nlasc']) * 0.064
+            self.chan_data['trig_time'] = (np.arange(meta_dict['npts']) - meta_dict['nlasc'] - 32) * 0.064
 
     def summary(self, raw=False):
         if self.time_signature == '64ms':
