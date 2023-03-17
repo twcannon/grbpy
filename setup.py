@@ -12,7 +12,7 @@ setup(
     author='Thomas Cannon',
     author_email='tcannon.mail@gmail.com',
     packages=['grbpy'],
-    install_requires=['numpy>=1.17.0rc2'],
+    install_requires=['numpy>=1.17.0rc2', 'pandas>=1.5.0'],
     version='0.1',
     license='MIT',
     description='A utility for GRB research',
