@@ -1,6 +1,7 @@
-import sys
 import pandas as pd
 import numpy as np
+import sys
+import os
 
 
 class BATSEBurst:
@@ -17,21 +18,25 @@ class BATSEBurst:
         self.chan_data = None
 
     def parse_file(self):
-        f = open(self.file_path, 'r')
-        if self.time_signature == '64ms':
+        if not os.path.exists(self.file_path):
+            return False
+        else:
+            f = open(self.file_path, 'r')
+            if self.time_signature == '64ms':
 
-            temp_meta_names = f.readline().split()[:4]
-            temp_meta_data = f.readline().split()[:4]
-            meta_dict = {}
-            for i in range(len(temp_meta_names)):
-                meta_dict[temp_meta_names[i]] = int(temp_meta_data[i])
-            self.meta_data = meta_dict
+                temp_meta_names = f.readline().split()[:4]
+                temp_meta_data = f.readline().split()[:4]
+                meta_dict = {}
+                for i in range(len(temp_meta_names)):
+                    meta_dict[temp_meta_names[i]] = int(temp_meta_data[i])
+                self.meta_data = meta_dict
 
-            self.raw_data = f.read()
-            header_names = ['chan1', 'chan2', 'chan3', 'chan4']
-            self.chan_data = pd.read_csv(self.file_path, header=1, delimiter=r"\s+", names=header_names)
-            self.chan_data['sum_chan'] = self.chan_data[list(self.chan_data.columns)].sum(axis=1)
-            self.chan_data['trig_time'] = (np.arange(meta_dict['npts']) - meta_dict['nlasc'] - 32) * 0.064
+                self.raw_data = f.read()
+                header_names = ['chan1', 'chan2', 'chan3', 'chan4']
+                self.chan_data = pd.read_csv(self.file_path, header=1, delimiter=r"\s+", names=header_names)
+                self.chan_data['sum_chan'] = self.chan_data[list(self.chan_data.columns)].sum(axis=1)
+                self.chan_data['trig_time'] = (np.arange(meta_dict['npts']) - meta_dict['nlasc'] - 32) * 0.064
+                return True
 
     def summary(self, raw=False):
         if self.time_signature == '64ms':
@@ -50,11 +55,15 @@ class BATSEDurations:
         self.dur_data = None
 
     def parse_file(self):
-        f = open(self.file_path, 'r')
-        self.header_names = ['trig_num', 't50', 't50e', 't50_start', 't90', 't90e', 't90_start']
-        self.raw_data = f.read()
-        self.dur_data = pd.read_csv(self.file_path, header=None, delimiter=r"\s+")
-        self.dur_data.columns = self.header_names
+        if not os.path.exists(self.file_path):
+            return False
+        else:
+            f = open(self.file_path, 'r')
+            self.header_names = ['trig_num', 't50', 't50e', 't50_start', 't90', 't90e', 't90_start']
+            self.raw_data = f.read()
+            self.dur_data = pd.read_csv(self.file_path, header=None, delimiter=r"\s+")
+            self.dur_data.columns = self.header_names
+            return True
 
     def summary(self, raw=False):
         print(f'See BATSE.md for Summary')
